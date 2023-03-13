@@ -1,6 +1,8 @@
 package com.avaj.simulator.aircraft;
 
 import com.avaj.simulator.Coordinates;
+import com.avaj.simulator.exceptions.CustomExceptions;
+
 
 public class AircraftFactory{
     private static long idCounter = 0;
@@ -23,7 +25,7 @@ public class AircraftFactory{
         case "JetPlane":
             return new JetPlane(nextId(), p_name, p_coordinates);
         default:
-            throw new IllegalArgumentException("Unknown type: " + p_type);
+            throw new CustomExceptions("Unknown type: " + p_type);
         }
     }
 }

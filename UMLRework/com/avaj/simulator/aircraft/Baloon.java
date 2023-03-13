@@ -24,22 +24,22 @@ public class Baloon extends Aircraft implements Flyable {
                System.out.println(c);
                System.exit(0);
             }
-            coordinates.alterHeight(4);
+            this.coordinates.alterHeight(4);
             break;
          case "RAIN":
             System.out.println(this.getName() + ": I'm siinging in the rain..");
-            coordinates.alterHeight(-5);
+            this.coordinates.alterHeight(-5);
             break;
          case "FOG":
             System.out.println(this.getName() + ": I can't see ! Watch out for the birds !!");
-            coordinates.alterHeight(-3);
+            this.coordinates.alterHeight(-3);
             break;
          case "SNOW":
             System.out.println(this.getName() + ": It's snowing. We're gonna crash.");
             coordinates.alterHeight(-15);
             break;
       }
-      if (coordinates.getHeight() <= 0) {
+      if (this.coordinates.getHeight() <= 0) {
          System.out.println(this.getName() + " landing.");
          weatherTower.unregister(this);
       }

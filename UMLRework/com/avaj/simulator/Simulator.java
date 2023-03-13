@@ -2,10 +2,12 @@ package com.avaj.simulator;
 
 import com.avaj.simulator.aircraft.*;
 import com.avaj.simulator.aircraftList.AircraftList;
+import com.avaj.simulator.exceptions.*;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.*;
 
@@ -15,79 +17,96 @@ public class Simulator {
 
 	//Check Entry File
 	public static boolean parseEntry (String entry) {
+		if (entry.isEmpty()){
+			throw new WrongFormatException(null);
+		}
+		//check no empty newline
+		if (!Character.isDigit(entry.charAt(entry.length() - 2))) {
+			throw new WrongFormatException(null);
+		}
+
 		String[] lines = entry.split(System.lineSeparator());
 
-		int maxWeatherChange = Integer.parseInt(lines[0]);
-		if ( maxWeatherChange < 1) {
-			return false;
+		try { Integer.parseInt(lines[0]); }
+		catch (NumberFormatException e) {
+			throw new WrongFormatException(e);
 		}
-		AircraftList[] aircraftList = null;
+		if ( Integer.parseInt(lines[0]) < 1) {
+			throw new WrongFormatException(null);
+		}
 		
 		for(int i = 1; i< lines.length; i++){
+			if (lines[i].isEmpty()){
+				throw new WrongFormatException(null);
+			}
+			if (lines[i].charAt(lines[i].length() - 1) == ' ') {
+				throw new WrongFormatException(null);
+			}
+
 			String[] aircraft = lines[i].split(" ");
 			if (aircraft.length != 5){
-				System.out.println("Wrong format lenght");  
-				return false; 
+				throw new WrongFormatException(null);
 			}
-			// Create new aircraft
-			AircraftList newAircraft = new AircraftList();
-
+			//Check TYPE
 			String type = aircraft[0];
-			//Check Type
-			if (type.equals("JetPlane") || type.equals("Helicopter") || type.equals("Baloon") ) {
-				newAircraft.setId(type);
-			}
-			else {
-				System.out.println("Wrong format type");  
-				return false; 
+			if (!type.equals("JetPlane") && !type.equals("Helicopter") && !type.equals("Baloon") ) {
+				throw new WrongFormatException(null);
 			}
 			//Check Name
-			// if (aircraft[1] == null || aircraft[1][0] != aircraft[0][0]){
-			// 	System.out.println("Wrong format");  
-			// 	return false; 
-			// }
-			newAircraft.setName(aircraft[1]);
-			//Check longitude
-			if ( Integer.parseInt(aircraft[2]) < 1 || Integer.parseInt(aircraft[2]) > 2147483647) {
-				System.out.println("Wrong format - longitude");  
-				return false;
+			if (type.charAt(0) != aircraft[1].charAt(0)) {
+				throw new WrongFormatException(null);
 			}
-			newAircraft.setLongitude(Integer.parseInt(aircraft[2]));
-			//Check latitude
-			if ( Integer.parseInt(aircraft[2]) < 1 || Integer.parseInt(aircraft[2]) > 2147483647) {
-				System.out.println("Wrong format - latitude");  
-				return false;
+			String nameId = aircraft[1].substring(1);
+			//Check all int
+			try {
+				Integer.parseInt(nameId);
+				Integer.parseInt(aircraft[2]);
+				Integer.parseInt(aircraft[3]);
+				Integer.parseInt(aircraft[4]);
 			}
-			newAircraft.setLatitude(Integer.parseInt(aircraft[3]));
+			catch (NumberFormatException e) {
+				throw new WrongFormatException(e);
+			}
+
+			//Check all Int Only number Pattern
+			String regex = "^[0-9]+$";
+			if (!nameId.matches(regex) || !aircraft[2].matches(regex) || !aircraft[3].matches(regex) || !aircraft[4].matches(regex)) {
+				throw new WrongFormatException(null);
+			}
+
 			//Check height
 			if ( Integer.parseInt(aircraft[3]) < 0 || Integer.parseInt(aircraft[3]) > 100) {
-				System.out.println("Wrong format - height");  
-				return false;
+				throw new WrongFormatException(null);
 			}
-			newAircraft.setHeight(Integer.parseInt(aircraft[4]));
-
-			System.out.println(lines[i]);  
-
 		}
 		return true;
 	}
+
+	private static BufferedReader readFailingFile(String pathFile) throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader(new File(pathFile)));
+        return br;
+    }
 
 	public static void main(String[] args) {
 		String everything = "";
 		String line = "";
 		FileReader fileReader = null;
-		if (args.length < 1) { 
+		File file = null;
+
+		if (args.length != 1) { 
+			System.out.println("This program take exactly One argument");  
 			return;
 		}
-		//Read entry simulation file
-		File file = new File(args[0]);
+		//Open and Read entry simulation file
+		BufferedReader br = null;
 		try {
-			fileReader = new FileReader(file);
+			br = readFailingFile(args[0]);
 		}
 		catch (IOException e){
-			e.printStackTrace();
+			System.out.println("file doesn't exist");
+			return;
 		}
-		BufferedReader br = new BufferedReader(fileReader);
+
 		try {
 			StringBuilder sb = new StringBuilder();
 			try {
@@ -120,7 +139,16 @@ public class Simulator {
 			return;
 		}
 
-		boolean mapping = parseEntry(everything);
+		//Parse entry
+		boolean mapping = false;
+		try { mapping = parseEntry(everything); }
+        catch(WrongFormatException c) {
+               System.out.println(c);
+        }
+		if (mapping == false) {
+			return;
+		}
+
 		//Formater la data
 		String aircraftFactory[] = everything.split("\\n"); 
 
@@ -130,8 +158,7 @@ public class Simulator {
 
 		for (int i=1; i< aircraftFactory.length; i++) {
 			String oneLine[] = aircraftFactory[i].split(" ");
-			Coordinates oneCoordinate = new Coordinates(Integer.parseInt(oneLine[2]), Integer.parseInt(oneLine[3]), Integer.parseInt(oneLine[3]));
-
+			Coordinates oneCoordinate = new Coordinates(Integer.parseInt(oneLine[2]), Integer.parseInt(oneLine[3]), Integer.parseInt(oneLine[4]));
 			Flyable flyable = aircraftFac.newAircraft(oneLine[0], oneLine[1], oneCoordinate);
 			weatherTower.register(flyable);
 			flyable.registerTower(weatherTower);
@@ -143,7 +170,5 @@ public class Simulator {
 		 }
 
 	}
-
-
 
 }
