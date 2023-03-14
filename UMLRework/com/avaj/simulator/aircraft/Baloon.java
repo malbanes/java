@@ -18,7 +18,7 @@ public class Baloon extends Aircraft implements Flyable {
       String weather = this.weatherTower.getWeather(this.coordinates);
       switch(weather) {
          case "SUN":
-            weatherTower.logMessage(this.getName() + ": Finaly ! Someone pass me the Solar cream !");
+            weatherTower.logMessage(this.getName() + ": Finally ! Someone pass me the Solar cream !");
             try { coordinates.alterLongitude(2); }
             catch(CustomExceptions c) {
                System.out.println(c);
@@ -48,6 +48,7 @@ public class Baloon extends Aircraft implements Flyable {
    @Override
    public void registerTower(WeatherTower p_weatherTower){
       this.weatherTower = p_weatherTower;
+      this.weatherTower.register(this);
    }
 
    @Override

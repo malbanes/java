@@ -3,11 +3,12 @@ package com.avaj.simulator;
 import com.avaj.simulator.aircraft.*;
 import com.avaj.simulator.exceptions.*;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.util.List;
-
+import java.util.ArrayList;
 
 
 public class Simulator {
@@ -84,6 +85,39 @@ public class Simulator {
         return br;
     }
 
+	public static void generateFile(ArrayList<String> data) {
+		try {
+			File file = new File("simulation.txt");
+			file.delete();
+			if (!file.createNewFile()) {
+				throw new CustomExceptions("Error in file creation");
+			}
+		  } catch (IOException e) {
+			throw new CustomExceptions("Error in file creation");
+		  }
+
+		  BufferedWriter bufferedWriter = null;
+		  try {
+			FileWriter writer = new FileWriter("simulation.txt", true);
+			bufferedWriter = new BufferedWriter(writer);
+			for (String line : data) {
+				bufferedWriter.write(line);
+				bufferedWriter.write(System.lineSeparator());
+			}
+			bufferedWriter.close();
+		  } catch (Exception e) {
+			throw new CustomExceptions("Error in file generation");
+		}
+		  if (bufferedWriter != null) {
+			try {
+				bufferedWriter.close();
+			}
+			catch (IOException e) {
+				throw new CustomExceptions("Error in file generation");
+			}
+		  }
+	}
+
 	public static void main(String[] args) {
 		String everything = "";
 		String line = "";
@@ -157,18 +191,22 @@ public class Simulator {
 			String oneLine[] = aircraftFactory[i].split(" ");
 			Coordinates oneCoordinate = new Coordinates(Integer.parseInt(oneLine[2]), Integer.parseInt(oneLine[3]), Integer.parseInt(oneLine[4]));
 			Flyable flyable = aircraftFac.newAircraft(oneLine[0], oneLine[1], oneCoordinate);
-			weatherTower.register(flyable);
 			flyable.registerTower(weatherTower);
 		}
 
-		List<Flyable> flyableList = weatherTower.getObservers();
-		 for(int i = 0; i < numberOfTurn; i++){
+		 for(int i = 1; i <= numberOfTurn; i++){
+			//Uncomment this line for better visibility
+			//weatherTower.logMessage("Simulation turn: " + i);
 			weatherTower.changeWeather();
 		 }
 
 		 //Generate simulation file
-		 System.out.println(weatherTower.getLogMessages());
-
+		 try {
+			generateFile(weatherTower.getLogMessages());
+		 }
+		 catch (CustomExceptions e) {
+			e.printStackTrace();
+		 }
 	}
 
 }

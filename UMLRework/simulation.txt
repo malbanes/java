@@ -1,0 +1,192 @@
+Tower says: Baloon#B1(1) registered to weather tower.
+Tower says: Baloon#B2(2) registered to weather tower.
+Tower says: JetPlane#J1(3) registered to weather tower.
+Tower says: Helicopter#H1(4) registered to weather tower.
+Tower says: Helicopter#H2(5) registered to weather tower.
+Tower says: Helicopter#H3(6) registered to weather tower.
+Tower says: Baloon#B3(7) registered to weather tower.
+Tower says: JetPlane#J2(8) registered to weather tower.
+Tower says: Helicopter#H4(9) registered to weather tower.
+Simulation turn: 1
+Baloon#B1(1): I can't see ! Watch out for the birds !!
+Baloon#B2(2): I'm siinging in the rain..
+JetPlane#J1(3): Rain is nothing.
+Helicopter#H1(4): My rotor is going to freeze!
+Helicopter#H2(5): My rotor is going to freeze!
+Helicopter#H3(6): Carefull. We enter the fog.
+Baloon#B3(7): It's snowing. We're gonna crash.
+JetPlane#J2(8): It's sunny ! Let me put my Ray-Ban on.
+Helicopter#H4(9): It's so hot ! Open the carrier.
+Simulation turn: 2
+Baloon#B1(1): It's snowing. We're gonna crash.
+Baloon#B2(2): I can't see ! Watch out for the birds !!
+JetPlane#J1(3): It's Freezing, Avoid the ice cloud sword.
+Helicopter#H1(4): My rotor is going to freeze!
+Helicopter#H1(4) landing.
+Tower says: Helicopter#H1(4) unregistered from weather tower.
+Helicopter#H2(5): Carefull. We enter the fog.
+Helicopter#H3(6): It's raining. Better watch out for lightings
+Baloon#B3(7): Finally ! Someone pass me the Solar cream !
+JetPlane#J2(8): It's sunny ! Let me put my Ray-Ban on.
+Helicopter#H4(9): It's raining. Better watch out for lightings
+Simulation turn: 3
+Baloon#B1(1): Finally ! Someone pass me the Solar cream !
+Baloon#B2(2): I can't see ! Watch out for the birds !!
+JetPlane#J1(3): It's Freezing, Avoid the ice cloud sword.
+Helicopter#H2(5): Carefull. We enter the fog.
+Helicopter#H3(6): Carefull. We enter the fog.
+Baloon#B3(7): I can't see ! Watch out for the birds !!
+JetPlane#J2(8): Rain is nothing.
+Helicopter#H4(9): It's so hot ! Open the carrier.
+Simulation turn: 4
+Baloon#B1(1): I'm siinging in the rain..
+Baloon#B2(2): I'm siinging in the rain..
+JetPlane#J1(3): I can't see. Start the autopilot ! Ho wait.. It is on.
+Helicopter#H2(5): It's so hot ! Open the carrier.
+Helicopter#H3(6): Carefull. We enter the fog.
+Baloon#B3(7): Finally ! Someone pass me the Solar cream !
+JetPlane#J2(8): It's Freezing, Avoid the ice cloud sword.
+Helicopter#H4(9): My rotor is going to freeze!
+Simulation turn: 5
+Baloon#B1(1): Finally ! Someone pass me the Solar cream !
+Baloon#B2(2): It's snowing. We're gonna crash.
+JetPlane#J1(3): Rain is nothing.
+Helicopter#H2(5): Carefull. We enter the fog.
+Helicopter#H3(6): Carefull. We enter the fog.
+Baloon#B3(7): It's snowing. We're gonna crash.
+JetPlane#J2(8): Rain is nothing.
+Helicopter#H4(9): It's so hot ! Open the carrier.
+Simulation turn: 6
+Baloon#B1(1): I'm siinging in the rain..
+Baloon#B1(1) landing.
+Tower says: Baloon#B1(1) unregistered from weather tower.
+Baloon#B2(2): Finally ! Someone pass me the Solar cream !
+JetPlane#J1(3): It's Freezing, Avoid the ice cloud sword.
+Helicopter#H2(5): Carefull. We enter the fog.
+Helicopter#H3(6): It's so hot ! Open the carrier.
+Baloon#B3(7): Finally ! Someone pass me the Solar cream !
+JetPlane#J2(8): It's Freezing, Avoid the ice cloud sword.
+Helicopter#H4(9): It's so hot ! Open the carrier.
+Simulation turn: 7
+Baloon#B2(2): I'm siinging in the rain..
+JetPlane#J1(3): It's Freezing, Avoid the ice cloud sword.
+Helicopter#H2(5): Carefull. We enter the fog.
+Helicopter#H3(6): My rotor is going to freeze!
+Baloon#B3(7): I can't see ! Watch out for the birds !!
+JetPlane#J2(8): Rain is nothing.
+Helicopter#H4(9): Carefull. We enter the fog.
+Simulation turn: 8
+Baloon#B2(2): Finally ! Someone pass me the Solar cream !
+JetPlane#J1(3): I can't see. Start the autopilot ! Ho wait.. It is on.
+Helicopter#H2(5): It's so hot ! Open the carrier.
+Helicopter#H3(6): My rotor is going to freeze!
+Baloon#B3(7): I'm siinging in the rain..
+JetPlane#J2(8): It's Freezing, Avoid the ice cloud sword.
+Helicopter#H4(9): It's raining. Better watch out for lightings
+Simulation turn: 9
+Baloon#B2(2): I'm siinging in the rain..
+JetPlane#J1(3): It's sunny ! Let me put my Ray-Ban on.
+Helicopter#H2(5): Carefull. We enter the fog.
+Helicopter#H3(6): Carefull. We enter the fog.
+Baloon#B3(7): It's snowing. We're gonna crash.
+Baloon#B3(7) landing.
+Tower says: Baloon#B3(7) unregistered from weather tower.
+JetPlane#J2(8): It's Freezing, Avoid the ice cloud sword.
+Helicopter#H4(9): My rotor is going to freeze!
+Simulation turn: 10
+Baloon#B2(2): It's snowing. We're gonna crash.
+JetPlane#J1(3): I can't see. Start the autopilot ! Ho wait.. It is on.
+Helicopter#H2(5): It's raining. Better watch out for lightings
+Helicopter#H3(6): My rotor is going to freeze!
+JetPlane#J2(8): I can't see. Start the autopilot ! Ho wait.. It is on.
+Helicopter#H4(9): It's so hot ! Open the carrier.
+Simulation turn: 11
+Baloon#B2(2): I can't see ! Watch out for the birds !!
+JetPlane#J1(3): It's sunny ! Let me put my Ray-Ban on.
+Helicopter#H2(5): My rotor is going to freeze!
+Helicopter#H3(6): My rotor is going to freeze!
+JetPlane#J2(8): I can't see. Start the autopilot ! Ho wait.. It is on.
+Helicopter#H4(9): It's raining. Better watch out for lightings
+Simulation turn: 12
+Baloon#B2(2): I'm siinging in the rain..
+JetPlane#J1(3): It's sunny ! Let me put my Ray-Ban on.
+Helicopter#H2(5): Carefull. We enter the fog.
+Helicopter#H3(6): Carefull. We enter the fog.
+JetPlane#J2(8): Rain is nothing.
+Helicopter#H4(9): My rotor is going to freeze!
+Simulation turn: 13
+Baloon#B2(2): It's snowing. We're gonna crash.
+Baloon#B2(2) landing.
+Tower says: Baloon#B2(2) unregistered from weather tower.
+JetPlane#J1(3): I can't see. Start the autopilot ! Ho wait.. It is on.
+Helicopter#H2(5): It's raining. Better watch out for lightings
+Helicopter#H3(6): Carefull. We enter the fog.
+JetPlane#J2(8): Rain is nothing.
+Helicopter#H4(9): My rotor is going to freeze!
+Simulation turn: 14
+JetPlane#J1(3): It's Freezing, Avoid the ice cloud sword.
+Helicopter#H2(5): It's raining. Better watch out for lightings
+Helicopter#H3(6): It's so hot ! Open the carrier.
+JetPlane#J2(8): I can't see. Start the autopilot ! Ho wait.. It is on.
+Helicopter#H4(9): It's raining. Better watch out for lightings
+Simulation turn: 15
+JetPlane#J1(3): I can't see. Start the autopilot ! Ho wait.. It is on.
+Helicopter#H2(5): It's raining. Better watch out for lightings
+Helicopter#H3(6): Carefull. We enter the fog.
+JetPlane#J2(8): It's Freezing, Avoid the ice cloud sword.
+Helicopter#H4(9): It's so hot ! Open the carrier.
+Simulation turn: 16
+JetPlane#J1(3): It's Freezing, Avoid the ice cloud sword.
+JetPlane#J1(3) landing.
+Tower says: JetPlane#J1(3) unregistered from weather tower.
+Helicopter#H2(5): My rotor is going to freeze!
+Helicopter#H3(6): It's raining. Better watch out for lightings
+JetPlane#J2(8): Rain is nothing.
+Helicopter#H4(9): It's raining. Better watch out for lightings
+Simulation turn: 17
+Helicopter#H2(5): It's so hot ! Open the carrier.
+Helicopter#H3(6): My rotor is going to freeze!
+JetPlane#J2(8): I can't see. Start the autopilot ! Ho wait.. It is on.
+Helicopter#H4(9): It's raining. Better watch out for lightings
+Simulation turn: 18
+Helicopter#H2(5): Carefull. We enter the fog.
+Helicopter#H3(6): My rotor is going to freeze!
+JetPlane#J2(8): Rain is nothing.
+Helicopter#H4(9): It's raining. Better watch out for lightings
+Simulation turn: 19
+Helicopter#H2(5): It's so hot ! Open the carrier.
+Helicopter#H3(6): Carefull. We enter the fog.
+JetPlane#J2(8): I can't see. Start the autopilot ! Ho wait.. It is on.
+Helicopter#H4(9): Carefull. We enter the fog.
+Simulation turn: 20
+Helicopter#H2(5): Carefull. We enter the fog.
+Helicopter#H3(6): It's raining. Better watch out for lightings
+JetPlane#J2(8): It's sunny ! Let me put my Ray-Ban on.
+Helicopter#H4(9): It's so hot ! Open the carrier.
+Simulation turn: 21
+Helicopter#H2(5): It's raining. Better watch out for lightings
+Helicopter#H3(6): It's raining. Better watch out for lightings
+JetPlane#J2(8): I can't see. Start the autopilot ! Ho wait.. It is on.
+Helicopter#H4(9): Carefull. We enter the fog.
+Simulation turn: 22
+Helicopter#H2(5): My rotor is going to freeze!
+Helicopter#H3(6): It's so hot ! Open the carrier.
+JetPlane#J2(8): Rain is nothing.
+Helicopter#H4(9): Carefull. We enter the fog.
+Simulation turn: 23
+Helicopter#H2(5): It's raining. Better watch out for lightings
+Helicopter#H3(6): It's so hot ! Open the carrier.
+JetPlane#J2(8): It's Freezing, Avoid the ice cloud sword.
+Helicopter#H4(9): It's raining. Better watch out for lightings
+Simulation turn: 24
+Helicopter#H2(5): It's so hot ! Open the carrier.
+Helicopter#H3(6): My rotor is going to freeze!
+JetPlane#J2(8): It's sunny ! Let me put my Ray-Ban on.
+Helicopter#H4(9): My rotor is going to freeze!
+Simulation turn: 25
+Helicopter#H2(5): Carefull. We enter the fog.
+Helicopter#H3(6): Carefull. We enter the fog.
+JetPlane#J2(8): Rain is nothing.
+Helicopter#H4(9): My rotor is going to freeze!
+Helicopter#H4(9) landing.
+Tower says: Helicopter#H4(9) unregistered from weather tower.

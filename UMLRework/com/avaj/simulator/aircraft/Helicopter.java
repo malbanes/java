@@ -54,6 +54,7 @@ public class Helicopter extends Aircraft implements Flyable {
    @Override
    public void registerTower(WeatherTower p_weatherTower){
       this.weatherTower = p_weatherTower;
+      this.weatherTower.register(this);
    }
    
    @Override

@@ -37,7 +37,7 @@ public class JetPlane extends Aircraft implements Flyable {
             }
             break;
          case "FOG":
-            weatherTower.logMessage(this.getName() + ": I can't see. Start the autopilot ! Ho wait.. It was started from the biginning.");
+            weatherTower.logMessage(this.getName() + ": I can't see. Start the autopilot ! Ho wait.. It is on.");
             try { coordinates.alterLatitude(1); }
             catch(CustomExceptions c) {
                System.out.println(c);
@@ -58,6 +58,7 @@ public class JetPlane extends Aircraft implements Flyable {
    @Override
    public void registerTower(WeatherTower p_weatherTower){
       this.weatherTower = p_weatherTower;
+      this.weatherTower.register(this);
    }
 
    @Override
