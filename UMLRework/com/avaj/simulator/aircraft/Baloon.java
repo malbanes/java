@@ -18,7 +18,7 @@ public class Baloon extends Aircraft implements Flyable {
       String weather = this.weatherTower.getWeather(this.coordinates);
       switch(weather) {
          case "SUN":
-            System.out.println(this.getName() + ": Finaly ! Someone pass me the Solar cream !");
+            weatherTower.logMessage(this.getName() + ": Finaly ! Someone pass me the Solar cream !");
             try { coordinates.alterLongitude(2); }
             catch(CustomExceptions c) {
                System.out.println(c);
@@ -27,20 +27,20 @@ public class Baloon extends Aircraft implements Flyable {
             this.coordinates.alterHeight(4);
             break;
          case "RAIN":
-            System.out.println(this.getName() + ": I'm siinging in the rain..");
+            weatherTower.logMessage(this.getName() + ": I'm siinging in the rain..");
             this.coordinates.alterHeight(-5);
             break;
          case "FOG":
-            System.out.println(this.getName() + ": I can't see ! Watch out for the birds !!");
+            weatherTower.logMessage(this.getName() + ": I can't see ! Watch out for the birds !!");
             this.coordinates.alterHeight(-3);
             break;
          case "SNOW":
-            System.out.println(this.getName() + ": It's snowing. We're gonna crash.");
+            weatherTower.logMessage(this.getName() + ": It's snowing. We're gonna crash.");
             coordinates.alterHeight(-15);
             break;
       }
       if (this.coordinates.getHeight() <= 0) {
-         System.out.println(this.getName() + " landing.");
+         weatherTower.logMessage(this.getName() + " landing.");
          weatherTower.unregister(this);
       }
       return;

@@ -20,7 +20,7 @@ public class JetPlane extends Aircraft implements Flyable {
 
       switch(weather) {
          case "SUN":
-            System.out.println(this.getName() + ": It's sunny ! Let me put my Ray-Ban on.");
+            weatherTower.logMessage(this.getName() + ": It's sunny ! Let me put my Ray-Ban on.");
             try { coordinates.alterLatitude(10); }
             catch(CustomExceptions c) {
                System.out.println(c);
@@ -29,7 +29,7 @@ public class JetPlane extends Aircraft implements Flyable {
             coordinates.alterHeight(2);
             break;
          case "RAIN":
-            System.out.println(this.getName() + ": Rain is nothing.");
+            weatherTower.logMessage(this.getName() + ": Rain is nothing.");
             try { coordinates.alterLatitude(5); }
             catch(CustomExceptions c) {
                System.out.println(c);
@@ -37,7 +37,7 @@ public class JetPlane extends Aircraft implements Flyable {
             }
             break;
          case "FOG":
-            System.out.println(this.getName() + ": I can't see. Start the autopilot ! Ho wait.. It was started from the biginning.");
+            weatherTower.logMessage(this.getName() + ": I can't see. Start the autopilot ! Ho wait.. It was started from the biginning.");
             try { coordinates.alterLatitude(1); }
             catch(CustomExceptions c) {
                System.out.println(c);
@@ -45,12 +45,12 @@ public class JetPlane extends Aircraft implements Flyable {
             }
             break;
          case "SNOW":
-            System.out.println(this.getName() + ": It's Freezing, Avoid the ice cloud sword.");
+            weatherTower.logMessage(this.getName() + ": It's Freezing, Avoid the ice cloud sword.");
             coordinates.alterHeight(-7);
             break;
       }
       if (coordinates.getHeight() <= 0) {
-         System.out.println(this.getName() + " landing.");
+         weatherTower.logMessage(this.getName() + " landing.");
          weatherTower.unregister(this);
       }
       return;

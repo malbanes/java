@@ -16,7 +16,7 @@ public class Helicopter extends Aircraft implements Flyable {
       String weather = this.weatherTower.getWeather(this.coordinates);
       switch(weather) {
          case "SUN":
-            System.out.println(this.getName() + ": It's so hot ! Open the carrier.");
+            weatherTower.logMessage(this.getName() + ": It's so hot ! Open the carrier.");
             try { coordinates.alterLongitude(10); }
             catch(CustomExceptions c) {
                System.out.println(c);
@@ -25,7 +25,7 @@ public class Helicopter extends Aircraft implements Flyable {
             coordinates.alterHeight(2);
             break;
          case "RAIN":
-            System.out.println(this.getName() + ": It's raining. Better watch out for lightings");
+            weatherTower.logMessage(this.getName() + ": It's raining. Better watch out for lightings");
             try { coordinates.alterLongitude(5); }
             catch(CustomExceptions c) {
                System.out.println(c);
@@ -33,7 +33,7 @@ public class Helicopter extends Aircraft implements Flyable {
             }
             break;
          case "FOG":
-            System.out.println(this.getName() + ": Carefull. We enter the fog.");
+            weatherTower.logMessage(this.getName() + ": Carefull. We enter the fog.");
             try { coordinates.alterLongitude(1); }
             catch(CustomExceptions c) {
                System.out.println(c);
@@ -41,12 +41,12 @@ public class Helicopter extends Aircraft implements Flyable {
             }
             break;
          case "SNOW":
-            System.out.println(this.getName() + ": My rotor is going to freeze!");
+            weatherTower.logMessage(this.getName() + ": My rotor is going to freeze!");
             coordinates.alterHeight(-12);
             break;
       }
       if (coordinates.getHeight() <= 0) {
-         System.out.println(this.getName() + " landing.");
+         weatherTower.logMessage(this.getName() + " landing.");
          weatherTower.unregister(this);
       }
       return;

@@ -7,16 +7,17 @@ import java.util.List;
 
 public class Tower{
 	private List<Flyable> observers;
+    private ArrayList<String> logMessages = new ArrayList<String>();
 
 	public void register(Flyable p_flyable){
         if (this.observers == null) {
-            this.observers = new ArrayList<>();
+            this.observers = new ArrayList<Flyable>();
         }
-        System.out.println("Tower says: " + p_flyable.getName() + " registered to weather tower.");
+        this.logMessage("Tower says: " + p_flyable.getName() + " registered to weather tower.");
         this.observers.add(p_flyable);
     }
 	public void unregister(Flyable p_flyable){
-        System.out.println("Tower says: " + p_flyable.getName() + " unregistered from weather tower.");
+        this.logMessage("Tower says: " + p_flyable.getName() + " unregistered from weather tower.");
         this.observers.remove(p_flyable);
     }
 
@@ -31,4 +32,12 @@ public class Tower{
             aircraft.updateCondition();
         });
     };
+
+    public void logMessage(String message) {
+        this.logMessages.add(message);
+    }
+
+    public ArrayList<String> getLogMessages() {
+        return this.logMessages;
+    }
 }

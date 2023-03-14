@@ -1,15 +1,12 @@
 package com.avaj.simulator;
 
 import com.avaj.simulator.aircraft.*;
-import com.avaj.simulator.aircraftList.AircraftList;
 import com.avaj.simulator.exceptions.*;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.FileNotFoundException;
 import java.util.List;
-import java.util.*;
 
 
 
@@ -168,6 +165,9 @@ public class Simulator {
 		 for(int i = 0; i < numberOfTurn; i++){
 			weatherTower.changeWeather();
 		 }
+
+		 //Generate simulation file
+		 System.out.println(weatherTower.getLogMessages());
 
 	}
 
