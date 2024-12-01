@@ -4,7 +4,7 @@ import com.avaj.simulator.Coordinates;
 import com.avaj.simulator.exceptions.CustomExceptions;
 
 
-public class AircraftFactory{
+public final class AircraftFactory{
     private static long idCounter = 0;
 
     private static long nextId() {
