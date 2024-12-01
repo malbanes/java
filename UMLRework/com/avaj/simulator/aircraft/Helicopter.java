@@ -3,9 +3,8 @@ package com.avaj.simulator.aircraft;
 import com.avaj.simulator.*;
 import com.avaj.simulator.exceptions.CustomExceptions;
 
-public class Helicopter extends Aircraft implements Flyable {
+public class Helicopter extends Aircraft {
    
-   protected WeatherTower weatherTower;
    private final String type = "Helicopter";
 
    public Helicopter(long p_id, String p_name, Coordinates p_coordinates){
@@ -57,7 +56,6 @@ public class Helicopter extends Aircraft implements Flyable {
       this.weatherTower.register(this);
    }
    
-   @Override
    public String getName() {
       return this.aircraftToString(this.type);
    }

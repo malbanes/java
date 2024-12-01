@@ -11,7 +11,15 @@ public class AircraftFactory{
         // retourne l'ID suivant
         idCounter++;
         return (idCounter);
-     }
+    }
+
+    private static AircraftFactory instance = new AircraftFactory();
+
+    private AircraftFactory() {};
+
+    public static AircraftFactory getInstance() {
+        return instance;
+    }
 
     public static Flyable newAircraft( String p_type, String p_name, Coordinates p_coordinates)
     {

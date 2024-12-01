@@ -6,9 +6,8 @@ import com.avaj.simulator.exceptions.CustomExceptions;
 
 
 
-public class JetPlane extends Aircraft implements Flyable {
+public class JetPlane extends Aircraft {
 
-   private WeatherTower weatherTower;
    private final String type = "JetPlane";
 
    public JetPlane(long p_id, String p_name, Coordinates p_coordinates){
@@ -61,7 +60,6 @@ public class JetPlane extends Aircraft implements Flyable {
       this.weatherTower.register(this);
    }
 
-   @Override
    public String getName() {
       return this.aircraftToString(this.type);
    }
