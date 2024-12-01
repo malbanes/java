@@ -184,7 +184,7 @@ public class Simulator {
 		String aircraftFactory[] = everything.split("\\n"); 
 
 		int numberOfTurn = Integer.parseInt(aircraftFactory[0]);
-		AircraftFactory aircraftFac = new AircraftFactory();
+		AircraftFactory aircraftFac = AircraftFactory.getInstance();
 		WeatherTower weatherTower = new WeatherTower();
 
 		for (int i=1; i< aircraftFactory.length; i++) {
